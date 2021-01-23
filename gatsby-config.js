@@ -5,10 +5,18 @@
  */
 
 module.exports = {
-  /* Your site config here */
   siteMetadata: {
-    title: 'Gatsby Bootcamp',
-    author: 'CompuWiser'
+    title: "Gatsby Bootcamp",
+    author: "CompuWiser",
   },
-  plugins: [`gatsby-plugin-sass`]
-}
+  plugins: [
+    'gatsby-plugin-sass',
+    {
+      resolve: 'gatsby-source-filesystem',
+      options: {
+        name: 'src',
+        path: `${__dirname}/src/posts`,
+      },
+    },
+  ],
+};
