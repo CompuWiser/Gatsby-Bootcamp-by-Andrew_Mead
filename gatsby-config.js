@@ -10,13 +10,28 @@ module.exports = {
     author: "CompuWiser",
   },
   plugins: [
-    'gatsby-plugin-sass',
+    "gatsby-plugin-sass",
     {
-      resolve: 'gatsby-source-filesystem',
+      resolve: "gatsby-source-filesystem",
       options: {
-        name: 'src',
+        name: "src",
         path: `${__dirname}/src/posts`,
       },
     },
+    "gatsby-transformer-remark",
+    /* {
+      resolve: "gatsby-transformer-remark",
+      options: {
+        plugins: [
+          "gatsby-remark-relative-images",
+          {
+            resolve: "gatsby-remark-images",
+            options: {
+              maxWidth: 750,
+            },
+          },
+        ],
+      },
+    }, */
   ],
 };
