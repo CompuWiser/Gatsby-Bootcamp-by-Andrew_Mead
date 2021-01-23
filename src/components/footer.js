@@ -1,8 +1,8 @@
 import React from "react";
-import styles from './footer.module.scss';
+import styles from "./footer.module.scss";
 
-export default () => (
+export default ({ author }) => (
   <footer className={styles.footer}>
-    <p>Created by SHANI👀B, © using Gatsby®</p>
+    <p>Created by {author}, © using Gatsby®</p>
   </footer>
 );
