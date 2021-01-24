@@ -4,34 +4,15 @@ import Layout from "../components/layout";
 import styles from "./blog.module.scss";
 
 export default () => {
-  /* const data = useStaticQuery(graphql`
-    query {
-      allMarkdownRemark {
-        edges {
-          node {
-            fields {
-              slug
-            }
-            html
-            frontmatter {
-              title
-              date
-            }
-          }
-        }
-      }
-    }
-  `); */
-
   const data = useStaticQuery(graphql`
     query {
-      allContentfulBlogPost {
+      allContentfulBlogPost(sort: { fields: publishedDate, order: DESC }) {
         edges {
           node {
             id
             title
             slug
-            publishedDate
+            publishedDate(formatString: "MMMM Do, YYYY")
           }
         }
       }
@@ -39,8 +20,6 @@ export default () => {
   `);
 
   const posts = data.allContentfulBlogPost.edges.map((post) => {
-    /* const { title, date } = edge.node.frontmatter;
-    const slug = edge.node.fields.slug; */
     const { id, title, slug, publishedDate } = post.node;
     return { id, title, date: publishedDate, slug };
   });
