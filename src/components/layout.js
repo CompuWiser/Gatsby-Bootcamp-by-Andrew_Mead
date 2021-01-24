@@ -13,6 +13,9 @@ export default ({ children }) => {
         siteMetadata {
           title
           author
+          phone
+          email
+          website
         }
       }
     }
@@ -23,7 +26,7 @@ export default ({ children }) => {
   return (
     <div className={styles.container}>
       <div className={styles.content}>
-        <Header author={author} title={title} />
+        <Header title={title} />
         {children}
       </div>
       <Footer author={author} />

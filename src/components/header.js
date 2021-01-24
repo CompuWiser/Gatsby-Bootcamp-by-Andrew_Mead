@@ -2,10 +2,10 @@ import React from "react";
 import { Link } from "gatsby";
 import styles from "./header.module.scss";
 
-export default ({ author, title }) => {
+export default ({ title }) => {
   return (
     <header className={styles.header}>
-      <h1 className={styles.title}>{author} Shop</h1>
+      <h1 className={styles.title}>{title}</h1>
       <nav>
         <ul className={styles.navList}>
           <li>

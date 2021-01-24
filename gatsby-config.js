@@ -8,6 +8,9 @@ module.exports = {
   siteMetadata: {
     title: "Gatsby Bootcamp",
     author: "CompuWiser",
+    phone: "+963 956 151613",
+    email: "compuwiser@outlook.com",
+    website: "https://compuwiser.com"
   },
   plugins: [
     "gatsby-plugin-sass",
