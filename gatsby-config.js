@@ -10,7 +10,7 @@ module.exports = {
     author: "CompuWiser",
     phone: "+963 956 151613",
     email: "compuwiser@outlook.com",
-    website: "https://compuwiser.com"
+    website: "https://compuwiser.com",
   },
   plugins: [
     "gatsby-plugin-sass",
@@ -21,8 +21,8 @@ module.exports = {
         path: `${__dirname}/src/posts`,
       },
     },
-    "gatsby-transformer-remark",
-    /* {
+    "gatsby-plugin-sharp",
+    {
       resolve: "gatsby-transformer-remark",
       options: {
         plugins: [
@@ -31,10 +31,11 @@ module.exports = {
             resolve: "gatsby-remark-images",
             options: {
               maxWidth: 750,
+              linkImagesToOriginal: false,
             },
           },
         ],
       },
-    }, */
+    },
   ],
 };

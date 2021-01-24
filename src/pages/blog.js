@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Layout from "../components/layout";
+import styles from "./blog.module.scss";
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -30,11 +31,14 @@ export default () => {
 
   return (
     <Layout>
-      <ol>
+      <h1>Blog</h1>
+      <ol className={styles.posts}>
         {posts.map(({ title, date, slug }, index) => (
-          <li key={index}>
-            <Link to={`./${slug}`}>{title}</Link>
-            <p>{date}</p>
+          <li className={styles.post} key={index}>
+            <Link to={`./${slug}`}>
+              <h2>{title}</h2>
+              <p>{date}</p>
+            </Link>
           </li>
         ))}
       </ol>

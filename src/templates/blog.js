@@ -21,7 +21,7 @@ const Blog = (props) => {
     <Layout>
       <h1>{title}</h1>
       <p>{date}</p>
-      <div dangerouslySetInnerHTML={{__html: html}}></div>
+      <div dangerouslySetInnerHTML={{ __html: html }} />
     </Layout>
   );
 };
