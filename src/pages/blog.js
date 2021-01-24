@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import styles from "./blog.module.scss";
 
 export default () => {
-  const data = useStaticQuery(graphql`
+  /* const data = useStaticQuery(graphql`
     query {
       allMarkdownRemark {
         edges {
@@ -21,20 +21,36 @@ export default () => {
         }
       }
     }
+  `); */
+
+  const data = useStaticQuery(graphql`
+    query {
+      allContentfulBlogPost {
+        edges {
+          node {
+            id
+            title
+            slug
+            publishedDate
+          }
+        }
+      }
+    }
   `);
 
-  const posts = data.allMarkdownRemark.edges.map((edge) => {
-    const { title, date } = edge.node.frontmatter;
-    const slug = edge.node.fields.slug;
-    return { title, date, slug };
+  const posts = data.allContentfulBlogPost.edges.map((post) => {
+    /* const { title, date } = edge.node.frontmatter;
+    const slug = edge.node.fields.slug; */
+    const { id, title, slug, publishedDate } = post.node;
+    return { id, title, date: publishedDate, slug };
   });
 
   return (
     <Layout>
       <h1>Blog</h1>
       <ol className={styles.posts}>
-        {posts.map(({ title, date, slug }, index) => (
-          <li className={styles.post} key={index}>
+        {posts.map(({ id, title, date, slug }, index) => (
+          <li className={styles.post} key={id}>
             <Link to={`./${slug}`}>
               <h2>{title}</h2>
               <p>{date}</p>
