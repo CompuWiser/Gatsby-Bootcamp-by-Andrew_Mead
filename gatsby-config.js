@@ -13,6 +13,7 @@ module.exports = {
     website: "https://compuwiser.com",
   },
   plugins: [
+    "gatsby-plugin-react-helmet",
     {
       resolve: `gatsby-source-contentful`,
       options: {

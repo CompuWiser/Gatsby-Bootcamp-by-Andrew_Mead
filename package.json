@@ -18,6 +18,7 @@
     "@contentful/rich-text-types": "^14.1.2",
     "contentful": "^8.1.7",
     "gatsby": "^2.31.1",
+    "gatsby-plugin-react-helmet": "^3.9.0",
     "gatsby-plugin-sass": "^3.1.0",
     "gatsby-plugin-sharp": "^2.13.1",
     "gatsby-remark-images": "^3.10.0",

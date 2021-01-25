@@ -2,6 +2,7 @@ import React from "react";
 import { graphql, useStaticQuery, Link } from "gatsby";
 import Layout from "../components/layout";
 import styles from "./blog.module.scss";
+import Head from '../components/head';
 
 export default () => {
   const data = useStaticQuery(graphql`
@@ -26,6 +27,7 @@ export default () => {
 
   return (
     <Layout>
+      <Head title="Blog"/>
       <h1>Blog</h1>
       <ol className={styles.posts}>
         {posts.map(({ id, title, date, slug }) => (
