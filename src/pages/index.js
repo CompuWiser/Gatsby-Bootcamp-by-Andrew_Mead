@@ -7,7 +7,7 @@ export default () => (
   <Layout>
     <Head title="Home"/>
     <h1>Hello</h1>
-    <h1>I'm Brian</h1>
+    <h1>I'm Asem</h1>
     <p>Do you need a developer?</p>
     <Link to="/contact">Contact Me ==></Link>
   </Layout>
