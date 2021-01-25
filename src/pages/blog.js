@@ -28,7 +28,7 @@ export default () => {
     <Layout>
       <h1>Blog</h1>
       <ol className={styles.posts}>
-        {posts.map(({ id, title, date, slug }, index) => (
+        {posts.map(({ id, title, date, slug }) => (
           <li className={styles.post} key={id}>
             <Link to={`./${slug}`}>
               <h2>{title}</h2>
